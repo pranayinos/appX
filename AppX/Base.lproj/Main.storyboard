@@ -172,27 +172,5 @@
             </objects>
             <point key="canvasLocation" x="228" y="389"/>
         </scene>
-        <!--App X-->
-        <scene sceneID="2A4-rK-Vfa">
-            <objects>
-                <navigationController storyboardIdentifier="WelcomeEntry" title="App X" automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="YaC-7t-cB6" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Yq-e1-3n0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Plm-2U-3eT">
-                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="l1k-Ye-20w" kind="relationship" relationship="rootViewController" id="ZY8-um-hvM"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aXX-XC-H9G" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="261" y="-305"/>
-        </scene>
     </scenes>
 </document>
