@@ -57,11 +57,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
                 self.keyChain.set(username, forKey: "uname-x")
                 self.keyChain.set(password, forKey: "passw-x")
+                userAuthenticator.loginUserAndNavigate(self)
                 
-                let nextView = getViewToPresentModally("welcome") as! MainAppController
-                nextView.username = self.usernameFeild.text!
-                
-                self.presentViewController(nextView, animated: true, completion: nil)
             }else{
                 self.usernameFeild.text = ""
                 self.passwordFeild.text = ""
@@ -92,16 +89,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             var password = ""
             username = self.keyChain.get("uname-x") ?? ""
             password = self.keyChain.get("passw-x") ?? ""
+            let userAuthenticator = BasicAuthenticator()
             guard username == "" && password == "" else
             {
-                let userAuthenticator = BasicAuthenticator()
                 let isLegitimateUser = userAuthenticator.authenticate(username, password: password)
             
                 if isLegitimateUser {
-                    let nextView = getViewToPresentModally("welcome") as! MainAppController
-                    nextView.username = self.usernameFeild.text!
-                
-                    self.presentViewController(nextView, animated: true, completion: nil)
+                    userAuthenticator.loginUserAndNavigate(self)
                 }
                 self.spinner.stopAnimating()
                 return

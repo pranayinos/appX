@@ -6,7 +6,7 @@
 //  Copyright © 2016 Pranay Kumar. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 protocol authenticator {
@@ -21,6 +21,14 @@ class BasicAuthenticator: authenticator{
             toReturn = true
         }
         return toReturn
+    }
+    
+    func loginUserAndNavigate (currentViewController: LoginViewController){
+        
+        let nextView = getViewToPresentModally("nav") as! UINavigationController
+        let mainView = nextView.viewControllers[0] as! MainAppController
+        mainView.username = currentViewController.usernameFeild.text!
+        currentViewController.presentViewController(nextView, animated: true, completion: nil)
     }
 }
 
