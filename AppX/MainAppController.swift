@@ -10,6 +10,13 @@ import UIKit
 
 class MainAppController: UIViewController {
     
+    let keyChain = KeychainSwift()
+    @IBAction func logoutAction(sender: AnyObject) {
+        keyChain.delete("uname-x")
+        keyChain.delete("passw-x")
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     @IBOutlet var userLabel: UILabel!
     var username : String = ""
     

@@ -8,9 +8,9 @@
 
 import UIKit
 
-func showAlertRetry(title : String, message : String) -> UIAlertController{
+func showAlertOk(title : String, message : String) -> UIAlertController{
     let ac : UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-    let okAction = UIAlertAction(title: "Retry", style: .Cancel, handler: nil)
+    let okAction = UIAlertAction(title: "Ok", style: .Cancel, handler: nil)
     ac.addAction(okAction)
     
     return ac

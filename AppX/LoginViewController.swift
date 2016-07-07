@@ -9,7 +9,12 @@
 import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
+    let keyChain = KeychainSwift()
+    
     @IBOutlet var appXLabel: UILabel!
+ 
+    let createLoginButtonTag = 0
+    let loginButtonTag = 1
     
     @IBOutlet var subtitleLabel: UILabel!
     @IBOutlet var spinner: UIActivityIndicatorView!
@@ -24,9 +29,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var footerLabel: UILabel!
     @IBAction func loginButton(sender: UIButton) {
         
-        
         guard isValidNonEmptyEmail(usernameFeild.text) else {
-            let alert = showAlertRetry("Invalid Email", message: "Please enter a valid email")
+            let alert = showAlertOk("Invalid Email", message: "Please enter a valid email")
             self.presentViewController(alert, animated: true, completion: nil)
             return
         }
@@ -43,26 +47,29 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     func login(){
         spinner.startAnimating()
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+          dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+            let username  = self.usernameFeild.text!
+            let password  = self.passwordFeild.text!
             let userAuthenticator = BasicAuthenticator()
-            let isLegitimateUser = userAuthenticator.authenticate(self.usernameFeild.text!, password: self.passwordFeild.text!)
+            let isLegitimateUser = userAuthenticator.authenticate(username, password: password)
             
             if isLegitimateUser {
+            
+                self.keyChain.set(username, forKey: "uname-x")
+                self.keyChain.set(password, forKey: "passw-x")
+                
                 let nextView = getViewToPresentModally("welcome") as! MainAppController
                 nextView.username = self.usernameFeild.text!
                 
                 self.presentViewController(nextView, animated: true, completion: nil)
-                
-                // self.usernameFeild.text = "Success"
             }else{
                 self.usernameFeild.text = ""
                 self.passwordFeild.text = ""
-                let alert = showAlertRetry("Authentication Failed", message: "Please check username and password")
+                let alert = showAlertOk("Authentication Failed", message: "Please check username and password")
                 self.presentViewController(alert, animated: true, completion: nil)
             }
             
             self.spinner.stopAnimating()
-            
         })
 
     }
@@ -75,7 +82,33 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordFeild.alpha = 0
         loginButton.alpha = 0
         footerLabel.alpha = 0
-        animateLabels()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.spinner.startAnimating()
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+            var username = ""
+            var password = ""
+            username = self.keyChain.get("uname-x") ?? ""
+            password = self.keyChain.get("passw-x") ?? ""
+            guard username == "" && password == "" else
+            {
+                let userAuthenticator = BasicAuthenticator()
+                let isLegitimateUser = userAuthenticator.authenticate(username, password: password)
+            
+                if isLegitimateUser {
+                    let nextView = getViewToPresentModally("welcome") as! MainAppController
+                    nextView.username = self.usernameFeild.text!
+                
+                    self.presentViewController(nextView, animated: true, completion: nil)
+                }
+                self.spinner.stopAnimating()
+                return
+            }
+            self.animateLabels()
+            self.spinner.stopAnimating()
+        })
     }
     
     func animateLabels(){
