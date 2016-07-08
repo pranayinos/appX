@@ -23,6 +23,22 @@ func isValidNonEmptyEmail(input : String?) -> Bool{
     return emailToValidate.isEmail
 }
 
+func isvalidPassword(input : String?) -> Bool{
+    guard let passordToValidate = input else{
+        return false
+    }
+    let alphabetSet = NSCharacterSet.letterCharacterSet()
+    let numberSet = NSCharacterSet.decimalDigitCharacterSet()
+    let doesContainAlphabets = passordToValidate.rangeOfCharacterFromSet(alphabetSet)
+    let doesContainNumbers = passordToValidate.rangeOfCharacterFromSet(numberSet)
+    
+    if doesContainAlphabets != nil && doesContainNumbers != nil && passordToValidate.characters.count > 5{
+        return true
+    }else{
+        return false
+    }
+}
+
 func getViewToPresentModally(storyBoardIdentifier : String) -> UIViewController {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let modalViewController = storyboard.instantiateViewControllerWithIdentifier(storyBoardIdentifier)

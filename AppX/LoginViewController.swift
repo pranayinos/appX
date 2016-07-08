@@ -29,18 +29,42 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var footerLabel: UILabel!
     @IBAction func loginButton(sender: UIButton) {
         
-        guard isValidNonEmptyEmail(usernameFeild.text) else {
+        if isValidNonEmptyEmail(usernameFeild.text) && isvalidPassword(passwordFeild.text){
+            login()
+        }else if isvalidPassword(passwordFeild.text){
             let alert = showAlertOk("Invalid Email", message: "Please enter a valid email")
             self.presentViewController(alert, animated: true, completion: nil)
             return
+        } else if isValidNonEmptyEmail(usernameFeild.text){
+            let alert = showAlertOk("Invalid Password", message: "Password must be alphanumeric not less than 6 charcters")
+            self.presentViewController(alert, animated: true, completion: nil)
+            return
+        } else {
+            let alert = showAlertOk("Invalid Username & Password", message: "Username should be a valid email & Password must be alphanumeric not less than 6 charcters")
+            self.presentViewController(alert, animated: true, completion: nil)
+            return
         }
-        login()
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         if(textField === passwordFeild){
-            login()
+            if isValidNonEmptyEmail(usernameFeild.text) && isvalidPassword(passwordFeild.text){
+                login()
+            }else if isvalidPassword(passwordFeild.text){
+                let alert = showAlertOk("Invalid Email", message: "Please enter a valid email")
+                self.presentViewController(alert, animated: true, completion: nil)
+                return true
+            } else if isValidNonEmptyEmail(usernameFeild.text){
+                let alert = showAlertOk("Invalid Password", message: "Password must be alphanumeric not less than 6 charcters")
+                self.presentViewController(alert, animated: true, completion: nil)
+                return true
+            } else {
+                let alert = showAlertOk("Invalid Username & Password", message: "Username should be a valid email & Password must be alphanumeric not less than 6 charcters")
+                self.presentViewController(alert, animated: true, completion: nil)
+                return true
+            }
+
         }
         return true
     }
