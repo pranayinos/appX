@@ -10,25 +10,32 @@ import UIKit
 
 
 protocol authenticator {
-    func authenticate(username : String, password : String) -> Bool
+    func authenticate(username : String, password : String) -> User?
 }
 
 class BasicAuthenticator: authenticator{
-    func authenticate(username: String, password: String) -> Bool {
-        var toReturn : Bool = false
+    func authenticate(username: String, password: String) -> User? {
+        var toReturn : User? = nil
         if username == "user@live.in" && password == "passw0rd"
         {
-            toReturn = true
+            toReturn = User(name: "User", username: username)
         }
         return toReturn
     }
     
     func loginUserAndNavigate (currentViewController: LoginViewController){
-        
-        let nextView = getViewToPresentModally("nav") as! UINavigationController
-        let mainView = nextView.viewControllers[0] as! MainAppController
-        mainView.username = currentViewController.usernameFeild.text!
-        currentViewController.presentViewController(nextView, animated: true, completion: nil)
+        currentViewController.dismissViewControllerAnimated(true, completion: {
+            let mainView = getViewToPresentModally("welcome") as! MainAppController
+             mainView.username = currentViewController.usernameFeild.text!
+            
+        })
     }
+}
+
+func getLoginViewToPresent() -> UIViewController {
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let modalViewController = storyboard.instantiateViewControllerWithIdentifier("loginView")
+    modalViewController.modalPresentationStyle = UIModalPresentationStyle.FullScreen
+    return modalViewController
 }
 

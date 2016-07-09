@@ -8,12 +8,11 @@
 
 import UIKit
 
-func showAlertOk(title : String, message : String) -> UIAlertController{
+func showAlertOk(title: String, message: String, currentView: UIViewController) {
     let ac : UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
     let okAction = UIAlertAction(title: "Ok", style: .Cancel, handler: nil)
     ac.addAction(okAction)
-    
-    return ac
+    currentView.presentViewController(ac, animated: true, completion: nil)
 }
 
 func isValidNonEmptyEmail(input : String?) -> Bool{
@@ -42,8 +41,7 @@ func isvalidPassword(input : String?) -> Bool{
 func getViewToPresentModally(storyBoardIdentifier : String) -> UIViewController {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let modalViewController = storyboard.instantiateViewControllerWithIdentifier(storyBoardIdentifier)
-    modalViewController.modalPresentationStyle = UIModalPresentationStyle.FullScreen
-    modalViewController.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
+    //modalViewController.modalPresentationStyle = UIModalPresentationStyle.FullScreen
+    //modalViewController.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
     return modalViewController
 }
-
