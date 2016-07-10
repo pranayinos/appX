@@ -28,6 +28,9 @@ class MainAppController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        let spinner = CustomSpinner(text: "Signing in...")
+        self.view.addSubview(spinner)
+        spinner.show()
         let tempUsername = self.keyChain.get("uname-x") ?? nil
         let tempPassword = self.keyChain.get("passw-x") ?? nil
         let userAuthenticator = BasicAuthenticator()
@@ -53,7 +56,7 @@ class MainAppController: UIViewController {
             self.presentViewController(loginViewController, animated: true, completion: nil)
         }
         //navigationItem.title = "App X"
-        //userLabel.text = username
+        spinner.hide()
     }
     
     override func viewDidLoad() {
@@ -61,6 +64,9 @@ class MainAppController: UIViewController {
         for view in self.view.subviews{
             view.alpha = 0
         }
+        
+        
+
     }
     
 }

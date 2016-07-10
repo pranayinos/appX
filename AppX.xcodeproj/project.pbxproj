@@ -17,7 +17,6 @@
 		192D16321D2C247D0066871F /* MainAppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192D16311D2C247D0066871F /* MainAppController.swift */; };
 		192D16341D2C32160066871F /* CommonUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192D16331D2C32160066871F /* CommonUtilities.swift */; };
 		1939B25B1D2E997300E8A11A /* KeychainSwiftDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1939B25A1D2E997300E8A11A /* KeychainSwiftDistrib.swift */; };
-		194820A01D2E0E6000FC64ED /* SpinnerSigningIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1948209F1D2E0E6000FC64ED /* SpinnerSigningIn.swift */; };
 		199EFD301D2F50DE0025D5C9 /* CustomSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199EFD2F1D2F50DE0025D5C9 /* CustomSpinner.swift */; };
 		199EFD341D30D3DE0025D5C9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199EFD331D30D3DE0025D5C9 /* User.swift */; };
 		199EFD361D30D57A0025D5C9 /* Exceptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199EFD351D30D57A0025D5C9 /* Exceptions.swift */; };
@@ -36,7 +35,6 @@
 		192D16311D2C247D0066871F /* MainAppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAppController.swift; sourceTree = "<group>"; };
 		192D16331D2C32160066871F /* CommonUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtilities.swift; sourceTree = "<group>"; };
 		1939B25A1D2E997300E8A11A /* KeychainSwiftDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftDistrib.swift; sourceTree = "<group>"; };
-		1948209F1D2E0E6000FC64ED /* SpinnerSigningIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerSigningIn.swift; sourceTree = "<group>"; };
 		199EFD2F1D2F50DE0025D5C9 /* CustomSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSpinner.swift; sourceTree = "<group>"; };
 		199EFD331D30D3DE0025D5C9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		199EFD351D30D57A0025D5C9 /* Exceptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exceptions.swift; sourceTree = "<group>"; };
@@ -86,7 +84,6 @@
 				199EFD331D30D3DE0025D5C9 /* User.swift */,
 				199EFD351D30D57A0025D5C9 /* Exceptions.swift */,
 				192D16331D2C32160066871F /* CommonUtilities.swift */,
-				1948209F1D2E0E6000FC64ED /* SpinnerSigningIn.swift */,
 			);
 			path = AppX;
 			sourceTree = "<group>";
@@ -164,7 +161,6 @@
 			files = (
 				199EFD301D2F50DE0025D5C9 /* CustomSpinner.swift in Sources */,
 				199EFD361D30D57A0025D5C9 /* Exceptions.swift in Sources */,
-				194820A01D2E0E6000FC64ED /* SpinnerSigningIn.swift in Sources */,
 				192D162E1D2C1A610066871F /* CustomTextFieldUnderlineOnly.swift in Sources */,
 				192D162A1D2AA9220066871F /* LoginViewController.swift in Sources */,
 				192D16321D2C247D0066871F /* MainAppController.swift in Sources */,

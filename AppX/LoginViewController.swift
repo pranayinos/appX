@@ -15,11 +15,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     //let loginButtonTag = 1
     @IBOutlet var appXLabel: UILabel!
     @IBOutlet var subtitleLabel: UILabel!
-    @IBOutlet var spinner: UIActivityIndicatorView!
     @IBOutlet var usernameFeild: UITextField!
     @IBOutlet var passwordFeild: UITextField!
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var footerLabel: UILabel!
+    let cSpinner = CustomSpinner(text: "Signing in...")
 
     @IBAction func tapAction(sender: AnyObject) {
         view.endEditing(true)
@@ -46,29 +46,30 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         for view in self.view.subviews {
             view.alpha = 0
         }
+        view.addSubview(cSpinner)
+        cSpinner.hide()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        self.spinner.startAnimating()
-            var username = ""
-            var password = ""
-            username = self.keyChain.get("uname-x") ?? ""
-            password = self.keyChain.get("passw-x") ?? ""
-            let userAuthenticator = BasicAuthenticator()
-            guard username == "" && password == "" else
-            {
-                let isLegitimateUser = userAuthenticator.authenticate(username, password: password)
+        cSpinner.show()
+        var username = ""
+        var password = ""
+        username = self.keyChain.get("uname-x") ?? ""
+        password = self.keyChain.get("passw-x") ?? ""
+        let userAuthenticator = BasicAuthenticator()
+        guard username == "" && password == "" else
+        {
+            let isLegitimateUser = userAuthenticator.authenticate(username, password: password)
             
-                if (isLegitimateUser != nil) {
+            if (isLegitimateUser != nil) {
                     userAuthenticator.loginUserAndNavigate(self)
-                }
-                self.spinner.stopAnimating()
-                return
             }
-            self.animateLabels()
-            self.spinner.stopAnimating()
+            self.cSpinner.hide()
+            return
+        }
+        self.animateLabels()
+        self.cSpinner.hide()
     }
     
     func animateLabels(){
@@ -103,7 +104,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func login(){
-        spinner.startAnimating()
+        cSpinner.show()
         let username  = self.usernameFeild.text!
         let password  = self.passwordFeild.text!
         let userAuthenticator = BasicAuthenticator()
@@ -122,8 +123,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             self.passwordFeild.text = ""
             showAlertOk("Authentication Failed", message: "Please check username and password", currentView: self)
         }
-        
-        self.spinner.stopAnimating()
+        cSpinner.hide()
         
     }
 

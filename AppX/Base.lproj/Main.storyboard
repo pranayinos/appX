@@ -30,22 +30,13 @@
                                 <color key="textColor" red="0.098039259104815868" green="0.52960686652357114" blue="0.9440705128205128" alpha="0.88049568965517244" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="WDf-ly-LCH">
-                                <rect key="frame" x="280" y="280" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="ZTg-76-e31"/>
-                                    <constraint firstAttribute="height" constant="40" id="cYp-OY-Wmo"/>
-                                </constraints>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.70980392160000005" green="0.92941176469999998" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="vQV-38-Mbh" firstAttribute="leading" secondItem="G1k-jQ-Eqx" secondAttribute="leading" id="Bn0-S3-XTk"/>
                             <constraint firstItem="G1k-jQ-Eqx" firstAttribute="centerX" secondItem="xAc-iD-bxY" secondAttribute="centerX" id="F5N-fF-6D7"/>
                             <constraint firstItem="vQV-38-Mbh" firstAttribute="top" secondItem="G1k-jQ-Eqx" secondAttribute="bottom" constant="20" id="Gj5-83-2EI"/>
-                            <constraint firstItem="WDf-ly-LCH" firstAttribute="centerX" secondItem="xAc-iD-bxY" secondAttribute="centerX" id="kB9-s6-85I"/>
                             <constraint firstItem="G1k-jQ-Eqx" firstAttribute="top" secondItem="t5d-hd-7Ll" secondAttribute="bottom" constant="50" id="wCW-mX-qO5"/>
-                            <constraint firstItem="WDf-ly-LCH" firstAttribute="centerY" secondItem="xAc-iD-bxY" secondAttribute="centerY" id="xAk-tu-sqZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="l7v-A6-0gf">
@@ -120,9 +111,6 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="rBr-oq-OFE">
-                                <rect key="frame" x="282" y="281" width="37" height="37"/>
-                            </activityIndicatorView>
                             <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5N-ua-OZ9">
                                 <rect key="frame" x="181" y="505" width="238" height="38"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
@@ -143,7 +131,6 @@
                         <constraints>
                             <constraint firstItem="uyG-TK-ZLF" firstAttribute="top" secondItem="wAN-qf-z6V" secondAttribute="bottom" constant="3" id="0Mq-t9-HPR"/>
                             <constraint firstItem="a5N-ua-OZ9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="3ie-GX-aG1"/>
-                            <constraint firstItem="rBr-oq-OFE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6BP-yE-1rH"/>
                             <constraint firstItem="zx4-fv-L9X" firstAttribute="top" secondItem="a5N-ua-OZ9" secondAttribute="bottom" constant="25" id="Ffy-O6-Phs"/>
                             <constraint firstItem="uyG-TK-ZLF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JjN-Z9-7dh"/>
                             <constraint firstItem="3qv-Vc-ygI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ngc-Go-YDo"/>
@@ -160,7 +147,6 @@
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="a5N-ua-OZ9" secondAttribute="trailing" constant="12" id="mZV-Mp-dY9"/>
                             <constraint firstItem="zx4-fv-L9X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ocY-tB-3fT"/>
                             <constraint firstItem="s44-Cr-o6v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y3b-uO-TNw"/>
-                            <constraint firstItem="rBr-oq-OFE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zLh-dn-vA5"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="NVI-sg-Wuy" appends="YES" id="1nE-ZK-d1h"/>
@@ -171,7 +157,6 @@
                         <outlet property="footerLabel" destination="zx4-fv-L9X" id="p7b-Y4-eBv"/>
                         <outlet property="loginButton" destination="a5N-ua-OZ9" id="jnR-3Z-yhE"/>
                         <outlet property="passwordFeild" destination="3qv-Vc-ygI" id="wZl-Nz-loR"/>
-                        <outlet property="spinner" destination="rBr-oq-OFE" id="3CO-Kq-Bo9"/>
                         <outlet property="subtitleLabel" destination="uyG-TK-ZLF" id="Enl-qe-Bsb"/>
                         <outlet property="usernameFeild" destination="s44-Cr-o6v" id="bmk-iH-7wu"/>
                     </connections>
