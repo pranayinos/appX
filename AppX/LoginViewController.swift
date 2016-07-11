@@ -26,9 +26,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func loginButton(sender: UIButton) {
-        
         loginOrDisplayAlerts()
-        
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -52,7 +50,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        cSpinner.show()
         var username = ""
         var password = ""
         username = self.keyChain.get(Constants.USERNAME_KEY) ?? ""
@@ -65,11 +62,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             if (isLegitimateUser != nil) {
                     userAuthenticator.loginUserAndNavigate(self)
             }
-            self.cSpinner.hide()
             return
         }
         //self.animateLabels()
-        self.cSpinner.hide()
     }
     
     func animateLabels(){
@@ -112,13 +107,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let isLegitimateUser = userAuthenticator.authenticate(username, password: password)
             
         if (isLegitimateUser != nil) {
-            
+            cSpinner.hide()
             self.keyChain.set(username, forKey: Constants.USERNAME_KEY)
             self.keyChain.set(password, forKey: Constants.PASSWORD_KEY)
             userAuthenticator.loginUserAndNavigate(self)
                 
         }else{
-            
+            cSpinner.hide()
             self.usernameFeild.text = String.getEmptyString()
             self.passwordFeild.text = String.getEmptyString()
             showAlertOk(Errors.INVALID_CREDENTIALS_TITLE, message: Errors.INVALID_CREDENTIALS_MESSAGE, currentView: self)

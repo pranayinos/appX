@@ -11,12 +11,12 @@ import UIKit
 class MainAppController: UIViewController {
     
     var currentUser : User?
-    
+    let spinnerC = CustomSpinner(text: Constants.SIGNING_IN_TEXT)
     let keyChain = KeychainSwift()
     
     @IBAction func logoutUser(sender: AnyObject) {
-        keyChain.delete("uname-x")
-        keyChain.delete("passw-x")
+        keyChain.delete(Constants.USERNAME_KEY)
+        keyChain.delete(Constants.PASSWORD_KEY)
         let loginViewController = getLoginViewToPresent()
         loginViewController.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
         self.presentViewController(loginViewController, animated: true, completion: nil)
@@ -28,12 +28,10 @@ class MainAppController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        let spinner = CustomSpinner(text: Constants.SIGNING_IN_TEXT)
-        self.view.addSubview(spinner)
-        spinner.show()
         let tempUsername = self.keyChain.get(Constants.USERNAME_KEY) ?? nil
         let tempPassword = self.keyChain.get(Constants.PASSWORD_KEY) ?? nil
         let userAuthenticator = BasicAuthenticator()
+        sleep(1)
         
         if let userName = tempUsername, let password = tempPassword {
             self.currentUser = userAuthenticator.authenticate(userName, password: password)
@@ -44,19 +42,23 @@ class MainAppController: UIViewController {
                     }
                 }
                 userLabel.text = currentUser?.name
+                navigationItem.title = "App X"
+                self.navigationController?.navigationBarHidden = false
+                spinnerC.hide()
             }
             else{
+                spinnerC.hide()
                 let loginViewController = getLoginViewToPresent()
                 loginViewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
                 self.presentViewController(loginViewController, animated: true, completion: nil)
             }
         }else{
+            spinnerC.hide()
             let loginViewController = getLoginViewToPresent()
             loginViewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
             self.presentViewController(loginViewController, animated: true, completion: nil)
         }
-        //navigationItem.title = "App X"
-        spinner.hide()
+        
     }
     
     override func viewDidLoad() {
@@ -64,8 +66,8 @@ class MainAppController: UIViewController {
         for view in self.view.subviews{
             view.alpha = 0
         }
-        
-        
+        self.view.addSubview(spinnerC)
+        self.navigationController!.navigationBarHidden = true
 
     }
     
