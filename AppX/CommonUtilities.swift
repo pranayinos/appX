@@ -8,10 +8,11 @@
 
 import UIKit
 
-func showAlertOk(title: String, message: String, currentView: UIViewController) {
-    let ac : UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-    let okAction = UIAlertAction(title: "Ok", style: .Cancel, handler: nil)
-    ac.addAction(okAction)
+func showAlert(title: String = "Alert", message: String, currentView: UIViewController, style: UIAlertControllerStyle = .Alert, actions : UIAlertAction...) {
+    let ac : UIAlertController = UIAlertController(title: title, message: message, preferredStyle: style)
+    for action in actions{
+        ac.addAction(action)
+    }
     currentView.presentViewController(ac, animated: true, completion: nil)
 }
 
@@ -38,8 +39,14 @@ func isvalidPassword(input : String?) -> Bool{
     }
 }
 
-func getViewToPresentModally(storyBoardIdentifier : String) -> UIViewController {
+func getViewById(storyBoardIdentifier : String) -> UIViewController {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let modalViewController = storyboard.instantiateViewControllerWithIdentifier(storyBoardIdentifier)
     return modalViewController
+}
+
+func presentView(currentView: UIViewController, storyBoardIdentifier : String, style: UIModalTransitionStyle, completion: (() -> Void)? = nil){
+    let loginViewController = getViewById(storyBoardIdentifier)
+    loginViewController.modalTransitionStyle = style
+    currentView.presentViewController(loginViewController, animated: true, completion: completion)
 }

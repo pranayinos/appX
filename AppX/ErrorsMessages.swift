@@ -1,5 +1,5 @@
 //
-//  Errors.swift
+//  ErrorsMessages.swift
 //  AppX
 //
 //  Created by Pranay Kumar on 11/07/16.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Errors {
+struct ErrorsMessages {
     static let INVALID_PASSWORD_TITLE = "Invalid Password"
     static let INVALID_PASSWORD_MESSAGE = "Password must be alphanumeric not less than \(Constants.MIN_PASSWORD_LENGTH) charcters"
     static let INVALID_USERNAME_TITLE = "Invalid Email"
@@ -17,4 +17,5 @@ struct Errors {
     static let INVALID_USERNAME_PASSWORD_MESSAGE = "Username should be a valid email & Password must be alphanumeric not less than \(Constants.MIN_PASSWORD_LENGTH) charcters"
     static let INVALID_CREDENTIALS_TITLE = "Authentication Failed"
     static let INVALID_CREDENTIALS_MESSAGE = "Please check username and password & Try Again"
+     static let OK = "Ok"
 }

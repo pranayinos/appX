@@ -9,6 +9,7 @@
 import Foundation
 
 struct Constants {
+    static let APP_TITLE = "App X"
     static let SIGNING_IN_TEXT = "Signing in..."
     static let USERNAME_KEY = "uname-x"
     static let PASSWORD_KEY = "passw-x"

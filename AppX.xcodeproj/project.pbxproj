@@ -18,7 +18,7 @@
 		192D16341D2C32160066871F /* CommonUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192D16331D2C32160066871F /* CommonUtilities.swift */; };
 		1939B25B1D2E997300E8A11A /* KeychainSwiftDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1939B25A1D2E997300E8A11A /* KeychainSwiftDistrib.swift */; };
 		1952A0F21D3389AE00429A8D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1952A0F11D3389AE00429A8D /* Constants.swift */; };
-		1952A0F41D338BEF00429A8D /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1952A0F31D338BEF00429A8D /* Errors.swift */; };
+		1952A0F41D338BEF00429A8D /* ErrorsMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1952A0F31D338BEF00429A8D /* ErrorsMessages.swift */; };
 		1952A0FF1D33902E00429A8D /* TempDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1952A0FE1D33902E00429A8D /* TempDefaults.swift */; };
 		199EFD301D2F50DE0025D5C9 /* CustomSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199EFD2F1D2F50DE0025D5C9 /* CustomSpinner.swift */; };
 		199EFD341D30D3DE0025D5C9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199EFD331D30D3DE0025D5C9 /* User.swift */; };
@@ -39,7 +39,7 @@
 		192D16331D2C32160066871F /* CommonUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtilities.swift; sourceTree = "<group>"; };
 		1939B25A1D2E997300E8A11A /* KeychainSwiftDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftDistrib.swift; sourceTree = "<group>"; };
 		1952A0F11D3389AE00429A8D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		1952A0F31D338BEF00429A8D /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		1952A0F31D338BEF00429A8D /* ErrorsMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorsMessages.swift; sourceTree = "<group>"; };
 		1952A0FE1D33902E00429A8D /* TempDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempDefaults.swift; sourceTree = "<group>"; };
 		199EFD2F1D2F50DE0025D5C9 /* CustomSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSpinner.swift; sourceTree = "<group>"; };
 		199EFD331D30D3DE0025D5C9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				1952A0F11D3389AE00429A8D /* Constants.swift */,
-				1952A0F31D338BEF00429A8D /* Errors.swift */,
+				1952A0F31D338BEF00429A8D /* ErrorsMessages.swift */,
 				1952A0FE1D33902E00429A8D /* TempDefaults.swift */,
 			);
 			name = Constants;
@@ -239,7 +239,7 @@
 				192D16321D2C247D0066871F /* MainAppController.swift in Sources */,
 				1939B25B1D2E997300E8A11A /* KeychainSwiftDistrib.swift in Sources */,
 				192D16341D2C32160066871F /* CommonUtilities.swift in Sources */,
-				1952A0F41D338BEF00429A8D /* Errors.swift in Sources */,
+				1952A0F41D338BEF00429A8D /* ErrorsMessages.swift in Sources */,
 				192D16181D2A4AF60066871F /* AppDelegate.swift in Sources */,
 				1952A0F21D3389AE00429A8D /* Constants.swift in Sources */,
 				192D162C1D2AAA2C0066871F /* StringExtensions.swift in Sources */,

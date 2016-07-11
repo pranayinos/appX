@@ -10,6 +10,8 @@ import UIKit
 
 class MainAppController: UIViewController {
     
+    var username : String?
+    @IBOutlet var userLabel: UILabel!
     var currentUser : User?
     let spinnerC = CustomSpinner(text: Constants.SIGNING_IN_TEXT)
     let keyChain = KeychainSwift()
@@ -17,21 +19,31 @@ class MainAppController: UIViewController {
     @IBAction func logoutUser(sender: AnyObject) {
         keyChain.delete(Constants.USERNAME_KEY)
         keyChain.delete(Constants.PASSWORD_KEY)
-        let loginViewController = getLoginViewToPresent()
-        loginViewController.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
-        self.presentViewController(loginViewController, animated: true, completion: nil)
+        presentView(self, storyBoardIdentifier: Constants.LOGIN_VIEW_ID, style: .CoverVertical)
     }
-   
-    @IBOutlet var userLabel: UILabel!
-    var username : String = ""
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        for view in self.view.subviews{
+            view.alpha = 0
+        }
+        self.navigationController!.navigationBarHidden = true
+        self.view.addSubview(spinnerC)
+        sleep(1)
+    }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        if(currentUser != nil){
+            userLabel.text = currentUser?.name
+            navigationItem.title = Constants.APP_TITLE
+            self.navigationController?.navigationBarHidden = false
+            return
+        }else{
+            
         let tempUsername = self.keyChain.get(Constants.USERNAME_KEY) ?? nil
         let tempPassword = self.keyChain.get(Constants.PASSWORD_KEY) ?? nil
         let userAuthenticator = BasicAuthenticator()
-        sleep(1)
         
         if let userName = tempUsername, let password = tempPassword {
             self.currentUser = userAuthenticator.authenticate(userName, password: password)
@@ -42,33 +54,20 @@ class MainAppController: UIViewController {
                     }
                 }
                 userLabel.text = currentUser?.name
-                navigationItem.title = "App X"
+                navigationItem.title = Constants.APP_TITLE
                 self.navigationController?.navigationBarHidden = false
                 spinnerC.hide()
             }
             else{
                 spinnerC.hide()
-                let loginViewController = getLoginViewToPresent()
-                loginViewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-                self.presentViewController(loginViewController, animated: true, completion: nil)
+                presentView(self, storyBoardIdentifier: Constants.LOGIN_VIEW_ID, style: .CrossDissolve)
             }
         }else{
             spinnerC.hide()
-            let loginViewController = getLoginViewToPresent()
-            loginViewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-            self.presentViewController(loginViewController, animated: true, completion: nil)
+            presentView(self, storyBoardIdentifier: Constants.LOGIN_VIEW_ID, style: .CrossDissolve)
+        }
         }
         
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        for view in self.view.subviews{
-            view.alpha = 0
-        }
-        self.view.addSubview(spinnerC)
-        self.navigationController!.navigationBarHidden = true
-
     }
     
 }
