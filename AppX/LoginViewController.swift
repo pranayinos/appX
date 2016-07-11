@@ -19,7 +19,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var passwordFeild: UITextField!
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var footerLabel: UILabel!
-    let cSpinner = CustomSpinner(text: "Signing in...")
+    let cSpinner = CustomSpinner(text: Constants.SIGNING_IN_TEXT)
 
     @IBAction func tapAction(sender: AnyObject) {
         view.endEditing(true)
@@ -44,7 +44,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         for view in self.view.subviews {
-            view.alpha = 0
+            view.alpha = 1
         }
         view.addSubview(cSpinner)
         cSpinner.hide()
@@ -55,8 +55,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         cSpinner.show()
         var username = ""
         var password = ""
-        username = self.keyChain.get("uname-x") ?? ""
-        password = self.keyChain.get("passw-x") ?? ""
+        username = self.keyChain.get(Constants.USERNAME_KEY) ?? ""
+        password = self.keyChain.get(Constants.PASSWORD_KEY) ?? ""
         let userAuthenticator = BasicAuthenticator()
         guard username == "" && password == "" else
         {
@@ -68,7 +68,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             self.cSpinner.hide()
             return
         }
-        self.animateLabels()
+        //self.animateLabels()
         self.cSpinner.hide()
     }
     
@@ -87,17 +87,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
         }else if isvalidPassword(passwordFeild.text){
             
-            showAlertOk("Invalid Email", message: "Please enter a valid email", currentView: self)
+            showAlertOk(Errors.INVALID_USERNAME_TITLE, message: Errors.INVALID_USERNAME_MESSAGE, currentView: self)
             return
             
         } else if isValidNonEmptyEmail(usernameFeild.text){
-            
-            showAlertOk("Invalid Password", message: "Password must be alphanumeric not less than 6 charcters", currentView: self)
+        
+            showAlertOk(Errors.INVALID_PASSWORD_TITLE, message: Errors.INVALID_PASSWORD_MESSAGE, currentView: self)
             return
             
         } else {
             
-            showAlertOk("Invalid Username & Password", message: "Username should be a valid email & Password must be alphanumeric not less than 6 charcters", currentView: self)
+            showAlertOk(Errors.INVALID_USERNAME_PASSWORD_TITLE, message: Errors.INVALID_USERNAME_PASSWORD_MESSAGE, currentView: self)
             return
             
         }
@@ -113,15 +113,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
         if (isLegitimateUser != nil) {
             
-            self.keyChain.set(username, forKey: "uname-x")
-            self.keyChain.set(password, forKey: "passw-x")
+            self.keyChain.set(username, forKey: Constants.USERNAME_KEY)
+            self.keyChain.set(password, forKey: Constants.PASSWORD_KEY)
             userAuthenticator.loginUserAndNavigate(self)
                 
         }else{
             
-            self.usernameFeild.text = ""
-            self.passwordFeild.text = ""
-            showAlertOk("Authentication Failed", message: "Please check username and password", currentView: self)
+            self.usernameFeild.text = String.getEmptyString()
+            self.passwordFeild.text = String.getEmptyString()
+            showAlertOk(Errors.INVALID_CREDENTIALS_TITLE, message: Errors.INVALID_CREDENTIALS_MESSAGE, currentView: self)
         }
         cSpinner.hide()
         

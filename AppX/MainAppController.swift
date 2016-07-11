@@ -28,11 +28,11 @@ class MainAppController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        let spinner = CustomSpinner(text: "Signing in...")
+        let spinner = CustomSpinner(text: Constants.SIGNING_IN_TEXT)
         self.view.addSubview(spinner)
         spinner.show()
-        let tempUsername = self.keyChain.get("uname-x") ?? nil
-        let tempPassword = self.keyChain.get("passw-x") ?? nil
+        let tempUsername = self.keyChain.get(Constants.USERNAME_KEY) ?? nil
+        let tempPassword = self.keyChain.get(Constants.PASSWORD_KEY) ?? nil
         let userAuthenticator = BasicAuthenticator()
         
         if let userName = tempUsername, let password = tempPassword {

@@ -16,7 +16,7 @@ protocol authenticator {
 class BasicAuthenticator: authenticator{
     func authenticate(username: String, password: String) -> User? {
         var toReturn : User? = nil
-        if username == "user@live.in" && password == "passw0rd"
+        if username == TemporaryDefaults.DEFAULT_USERNAME && password == TemporaryDefaults.DEFAULT_PASSWORD
         {
             toReturn = User(name: "User", username: username)
         }
@@ -25,7 +25,7 @@ class BasicAuthenticator: authenticator{
     
     func loginUserAndNavigate (currentViewController: LoginViewController){
         currentViewController.dismissViewControllerAnimated(true, completion: {
-            let mainView = getViewToPresentModally("welcome") as! MainAppController
+            let mainView = getViewToPresentModally(Constants.MAIN_VIEW_ID) as! MainAppController
              mainView.username = currentViewController.usernameFeild.text!
             
         })
@@ -34,7 +34,7 @@ class BasicAuthenticator: authenticator{
 
 func getLoginViewToPresent() -> UIViewController {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let modalViewController = storyboard.instantiateViewControllerWithIdentifier("loginView")
+    let modalViewController = storyboard.instantiateViewControllerWithIdentifier(Constants.LOGIN_VIEW_ID)
     modalViewController.modalPresentationStyle = UIModalPresentationStyle.FullScreen
     return modalViewController
 }

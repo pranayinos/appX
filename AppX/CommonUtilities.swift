@@ -31,7 +31,7 @@ func isvalidPassword(input : String?) -> Bool{
     let doesContainAlphabets = passordToValidate.rangeOfCharacterFromSet(alphabetSet)
     let doesContainNumbers = passordToValidate.rangeOfCharacterFromSet(numberSet)
     
-    if doesContainAlphabets != nil && doesContainNumbers != nil && passordToValidate.characters.count > 5{
+    if doesContainAlphabets != nil && doesContainNumbers != nil && passordToValidate.length >= Constants.MIN_PASSWORD_LENGTH{
         return true
     }else{
         return false
@@ -41,7 +41,5 @@ func isvalidPassword(input : String?) -> Bool{
 func getViewToPresentModally(storyBoardIdentifier : String) -> UIViewController {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let modalViewController = storyboard.instantiateViewControllerWithIdentifier(storyBoardIdentifier)
-    //modalViewController.modalPresentationStyle = UIModalPresentationStyle.FullScreen
-    //modalViewController.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
     return modalViewController
 }

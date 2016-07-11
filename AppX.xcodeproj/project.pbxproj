@@ -11,12 +11,15 @@
 		192D161D1D2A4AF60066871F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 192D161B1D2A4AF60066871F /* Main.storyboard */; };
 		192D161F1D2A4AF60066871F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 192D161E1D2A4AF60066871F /* Assets.xcassets */; };
 		192D162A1D2AA9220066871F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192D16291D2AA9220066871F /* LoginViewController.swift */; };
-		192D162C1D2AAA2C0066871F /* SwiftExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192D162B1D2AAA2C0066871F /* SwiftExtensions.swift */; };
+		192D162C1D2AAA2C0066871F /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192D162B1D2AAA2C0066871F /* StringExtensions.swift */; };
 		192D162E1D2C1A610066871F /* CustomTextFieldUnderlineOnly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192D162D1D2C1A610066871F /* CustomTextFieldUnderlineOnly.swift */; };
 		192D16301D2C23870066871F /* LoginUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192D162F1D2C23870066871F /* LoginUtilities.swift */; };
 		192D16321D2C247D0066871F /* MainAppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192D16311D2C247D0066871F /* MainAppController.swift */; };
 		192D16341D2C32160066871F /* CommonUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192D16331D2C32160066871F /* CommonUtilities.swift */; };
 		1939B25B1D2E997300E8A11A /* KeychainSwiftDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1939B25A1D2E997300E8A11A /* KeychainSwiftDistrib.swift */; };
+		1952A0F21D3389AE00429A8D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1952A0F11D3389AE00429A8D /* Constants.swift */; };
+		1952A0F41D338BEF00429A8D /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1952A0F31D338BEF00429A8D /* Errors.swift */; };
+		1952A0FF1D33902E00429A8D /* TempDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1952A0FE1D33902E00429A8D /* TempDefaults.swift */; };
 		199EFD301D2F50DE0025D5C9 /* CustomSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199EFD2F1D2F50DE0025D5C9 /* CustomSpinner.swift */; };
 		199EFD341D30D3DE0025D5C9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199EFD331D30D3DE0025D5C9 /* User.swift */; };
 		199EFD361D30D57A0025D5C9 /* Exceptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199EFD351D30D57A0025D5C9 /* Exceptions.swift */; };
@@ -29,12 +32,15 @@
 		192D161E1D2A4AF60066871F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		192D16231D2A4AF60066871F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		192D16291D2AA9220066871F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		192D162B1D2AAA2C0066871F /* SwiftExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftExtensions.swift; sourceTree = "<group>"; };
+		192D162B1D2AAA2C0066871F /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		192D162D1D2C1A610066871F /* CustomTextFieldUnderlineOnly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextFieldUnderlineOnly.swift; sourceTree = "<group>"; };
 		192D162F1D2C23870066871F /* LoginUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUtilities.swift; sourceTree = "<group>"; };
 		192D16311D2C247D0066871F /* MainAppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAppController.swift; sourceTree = "<group>"; };
 		192D16331D2C32160066871F /* CommonUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtilities.swift; sourceTree = "<group>"; };
 		1939B25A1D2E997300E8A11A /* KeychainSwiftDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftDistrib.swift; sourceTree = "<group>"; };
+		1952A0F11D3389AE00429A8D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1952A0F31D338BEF00429A8D /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		1952A0FE1D33902E00429A8D /* TempDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempDefaults.swift; sourceTree = "<group>"; };
 		199EFD2F1D2F50DE0025D5C9 /* CustomSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSpinner.swift; sourceTree = "<group>"; };
 		199EFD331D30D3DE0025D5C9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		199EFD351D30D57A0025D5C9 /* Exceptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exceptions.swift; sourceTree = "<group>"; };
@@ -70,22 +76,89 @@
 		192D16161D2A4AF60066871F /* AppX */ = {
 			isa = PBXGroup;
 			children = (
-				1939B25A1D2E997300E8A11A /* KeychainSwiftDistrib.swift */,
 				192D16171D2A4AF60066871F /* AppDelegate.swift */,
-				192D16291D2AA9220066871F /* LoginViewController.swift */,
 				192D161B1D2A4AF60066871F /* Main.storyboard */,
-				199EFD2F1D2F50DE0025D5C9 /* CustomSpinner.swift */,
 				192D161E1D2A4AF60066871F /* Assets.xcassets */,
 				192D16231D2A4AF60066871F /* Info.plist */,
-				192D162B1D2AAA2C0066871F /* SwiftExtensions.swift */,
-				192D162D1D2C1A610066871F /* CustomTextFieldUnderlineOnly.swift */,
-				192D162F1D2C23870066871F /* LoginUtilities.swift */,
-				192D16311D2C247D0066871F /* MainAppController.swift */,
-				199EFD331D30D3DE0025D5C9 /* User.swift */,
-				199EFD351D30D57A0025D5C9 /* Exceptions.swift */,
-				192D16331D2C32160066871F /* CommonUtilities.swift */,
+				1952A0F61D338ED600429A8D /* Keychain */,
+				1952A0F51D338EB500429A8D /* Controllers */,
+				1952A0F81D338F1C00429A8D /* CustomUIElements */,
+				1952A0FC1D338F9400429A8D /* SwiftExtensions */,
+				1952A0F91D338F3A00429A8D /* Model */,
+				1952A0FA1D338F4F00429A8D /* Exceptions */,
+				1952A0FB1D338F5B00429A8D /* Utilities */,
+				1952A0FD1D338FA300429A8D /* Constants */,
 			);
 			path = AppX;
+			sourceTree = "<group>";
+		};
+		1952A0F51D338EB500429A8D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				192D16311D2C247D0066871F /* MainAppController.swift */,
+				192D16291D2AA9220066871F /* LoginViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		1952A0F61D338ED600429A8D /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				1939B25A1D2E997300E8A11A /* KeychainSwiftDistrib.swift */,
+			);
+			name = Keychain;
+			sourceTree = "<group>";
+		};
+		1952A0F81D338F1C00429A8D /* CustomUIElements */ = {
+			isa = PBXGroup;
+			children = (
+				192D162D1D2C1A610066871F /* CustomTextFieldUnderlineOnly.swift */,
+				199EFD2F1D2F50DE0025D5C9 /* CustomSpinner.swift */,
+			);
+			name = CustomUIElements;
+			sourceTree = "<group>";
+		};
+		1952A0F91D338F3A00429A8D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				199EFD331D30D3DE0025D5C9 /* User.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1952A0FA1D338F4F00429A8D /* Exceptions */ = {
+			isa = PBXGroup;
+			children = (
+				199EFD351D30D57A0025D5C9 /* Exceptions.swift */,
+			);
+			name = Exceptions;
+			sourceTree = "<group>";
+		};
+		1952A0FB1D338F5B00429A8D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				192D162F1D2C23870066871F /* LoginUtilities.swift */,
+				192D16331D2C32160066871F /* CommonUtilities.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		1952A0FC1D338F9400429A8D /* SwiftExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				192D162B1D2AAA2C0066871F /* StringExtensions.swift */,
+			);
+			name = SwiftExtensions;
+			sourceTree = "<group>";
+		};
+		1952A0FD1D338FA300429A8D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				1952A0F11D3389AE00429A8D /* Constants.swift */,
+				1952A0F31D338BEF00429A8D /* Errors.swift */,
+				1952A0FE1D33902E00429A8D /* TempDefaults.swift */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,10 +239,13 @@
 				192D16321D2C247D0066871F /* MainAppController.swift in Sources */,
 				1939B25B1D2E997300E8A11A /* KeychainSwiftDistrib.swift in Sources */,
 				192D16341D2C32160066871F /* CommonUtilities.swift in Sources */,
+				1952A0F41D338BEF00429A8D /* Errors.swift in Sources */,
 				192D16181D2A4AF60066871F /* AppDelegate.swift in Sources */,
-				192D162C1D2AAA2C0066871F /* SwiftExtensions.swift in Sources */,
+				1952A0F21D3389AE00429A8D /* Constants.swift in Sources */,
+				192D162C1D2AAA2C0066871F /* StringExtensions.swift in Sources */,
 				192D16301D2C23870066871F /* LoginUtilities.swift in Sources */,
 				199EFD341D30D3DE0025D5C9 /* User.swift in Sources */,
+				1952A0FF1D33902E00429A8D /* TempDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  SwiftExtensions.swift
+//  StringExtensions.swift
 //  AppX
 //
 //  Created by Pranay Kumar on 04/07/16.
@@ -9,6 +9,9 @@
 import Foundation
 
 extension String{
+    
+    var length: Int { return characters.count    }
+    
     var isNotBlank: Bool{
         get{
             let trimmed = stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
@@ -48,5 +51,9 @@ extension String{
             return false
         }
 
+    }
+    
+    static func getEmptyString() -> String{
+        return ""
     }
 }
