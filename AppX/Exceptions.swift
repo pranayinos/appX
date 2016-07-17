@@ -14,3 +14,7 @@ enum InvalidParameterError: ErrorType{
     case invalidName(String)
     case invalidparam(String)
 }
+
+enum UnauthorizedUser : ErrorType{
+    case invalidCredentials
+}

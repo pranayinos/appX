@@ -8,18 +8,12 @@
 
 import UIKit
 
-func showAlertOk(title: String, message: String, currentView: UIViewController) {
-    let ac : UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-    let okAction = UIAlertAction(title: "Ok", style: .Cancel, handler: nil)
-    ac.addAction(okAction)
-    currentView.presentViewController(ac, animated: true, completion: nil)
-}
-
-func isValidNonEmptyEmail(input : String?) -> Bool{
-    guard let emailToValidate = input else{
-        return false
+func showAlert(title: String = "Alert", message: String, currentView: UIViewController, style: UIAlertControllerStyle = .Alert, actions : UIAlertAction...) {
+    let ac : UIAlertController = UIAlertController(title: title, message: message, preferredStyle: style)
+    for action in actions{
+        ac.addAction(action)
     }
-    return emailToValidate.isEmail
+    currentView.presentViewController(ac, animated: true, completion: nil)
 }
 
 func isvalidPassword(input : String?) -> Bool{
@@ -38,8 +32,20 @@ func isvalidPassword(input : String?) -> Bool{
     }
 }
 
-func getViewToPresentModally(storyBoardIdentifier : String) -> UIViewController {
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let modalViewController = storyboard.instantiateViewControllerWithIdentifier(storyBoardIdentifier)
-    return modalViewController
+func isValidEmail(input : String?) -> Bool {
+    if input == nil {
+        return false
+    }
+    do {
+        let regex = try NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", options: .CaseInsensitive)
+        return regex.firstMatchInString(input!, options: NSMatchingOptions(rawValue: 0), range: NSMakeRange(0, input!.characters.count)) != nil
+    } catch {
+        return false
+    }
+}
+
+func getView(storyboardName storyboard : String, storyboardIdentifier : String) -> UIViewController{
+    let storyboard = UIStoryboard(name: storyboard, bundle: nil)
+    let viewController = storyboard.instantiateViewControllerWithIdentifier(storyboardIdentifier)
+    return viewController
 }

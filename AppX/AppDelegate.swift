@@ -12,10 +12,41 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var splashTimer:NSTimer?
+    var storyboard:UIStoryboard?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        window =  UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.makeKeyAndVisible()
+        
+        storyboard = UIStoryboard(name: "LaunchScreen", bundle: nil)
+        let launchScreenController = storyboard!.instantiateViewControllerWithIdentifier("LaunchScr")
+        let snap = launchScreenController.view.snapshotViewAfterScreenUpdates(true)
+        
+        storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let rootController = storyboard!.instantiateViewControllerWithIdentifier("NavigationRoot")
+        if let window = self.window {
+            window.rootViewController = rootController
+        }
+        
+        window?.addSubview(snap)
+        window?.bringSubviewToFront(snap)
+        
+        storyboard = UIStoryboard(name: "Login", bundle: nil)
+        
+        let loginController = storyboard!.instantiateViewControllerWithIdentifier("LoginView")
+        
+        window?.rootViewController?.presentViewController(loginController, animated: false, completion:{
+            let index = self.window?.subviews.indexOf(snap)
+            
+            UIView.animateWithDuration(1, animations: {
+                self.window?.subviews[index!].alpha=0
+            })
+        })
+        
         
         return true
     }

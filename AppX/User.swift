@@ -14,14 +14,9 @@ class User {
     var name : String
     let dateCreated : NSDate
     
-    init?(name: String?, username: String){
-        if username.isEmail {
-        dateCreated = NSDate()
-        self.name = name!
+    init(username: String, name: String){
         self.username = username
-        }
-        else{
-            return nil
-        }
+        self.name = name
+        self.dateCreated = NSDate()
     }
 }

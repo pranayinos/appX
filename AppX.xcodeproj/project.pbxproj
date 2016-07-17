@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1927EF531D39023E001A6970 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1927EF521D39023E001A6970 /* Main.storyboard */; };
+		1927EF551D3902E8001A6970 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1927EF541D3902E8001A6970 /* LaunchScreen.storyboard */; };
 		192D16181D2A4AF60066871F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192D16171D2A4AF60066871F /* AppDelegate.swift */; };
-		192D161D1D2A4AF60066871F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 192D161B1D2A4AF60066871F /* Main.storyboard */; };
+		192D161D1D2A4AF60066871F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 192D161B1D2A4AF60066871F /* Login.storyboard */; };
 		192D161F1D2A4AF60066871F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 192D161E1D2A4AF60066871F /* Assets.xcassets */; };
 		192D162A1D2AA9220066871F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192D16291D2AA9220066871F /* LoginViewController.swift */; };
 		192D162C1D2AAA2C0066871F /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192D162B1D2AAA2C0066871F /* StringExtensions.swift */; };
@@ -18,7 +20,7 @@
 		192D16341D2C32160066871F /* CommonUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192D16331D2C32160066871F /* CommonUtilities.swift */; };
 		1939B25B1D2E997300E8A11A /* KeychainSwiftDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1939B25A1D2E997300E8A11A /* KeychainSwiftDistrib.swift */; };
 		1952A0F21D3389AE00429A8D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1952A0F11D3389AE00429A8D /* Constants.swift */; };
-		1952A0F41D338BEF00429A8D /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1952A0F31D338BEF00429A8D /* Errors.swift */; };
+		1952A0F41D338BEF00429A8D /* ErrorsMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1952A0F31D338BEF00429A8D /* ErrorsMessages.swift */; };
 		1952A0FF1D33902E00429A8D /* TempDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1952A0FE1D33902E00429A8D /* TempDefaults.swift */; };
 		199EFD301D2F50DE0025D5C9 /* CustomSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199EFD2F1D2F50DE0025D5C9 /* CustomSpinner.swift */; };
 		199EFD341D30D3DE0025D5C9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199EFD331D30D3DE0025D5C9 /* User.swift */; };
@@ -26,9 +28,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1927EF521D39023E001A6970 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		1927EF541D3902E8001A6970 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ../LaunchScreen.storyboard; sourceTree = "<group>"; };
 		192D16141D2A4AF60066871F /* AppX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		192D16171D2A4AF60066871F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		192D161C1D2A4AF60066871F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		192D161C1D2A4AF60066871F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		192D161E1D2A4AF60066871F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		192D16231D2A4AF60066871F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		192D16291D2AA9220066871F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -39,7 +43,7 @@
 		192D16331D2C32160066871F /* CommonUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtilities.swift; sourceTree = "<group>"; };
 		1939B25A1D2E997300E8A11A /* KeychainSwiftDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftDistrib.swift; sourceTree = "<group>"; };
 		1952A0F11D3389AE00429A8D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		1952A0F31D338BEF00429A8D /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		1952A0F31D338BEF00429A8D /* ErrorsMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorsMessages.swift; sourceTree = "<group>"; };
 		1952A0FE1D33902E00429A8D /* TempDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempDefaults.swift; sourceTree = "<group>"; };
 		199EFD2F1D2F50DE0025D5C9 /* CustomSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSpinner.swift; sourceTree = "<group>"; };
 		199EFD331D30D3DE0025D5C9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -76,8 +80,10 @@
 		192D16161D2A4AF60066871F /* AppX */ = {
 			isa = PBXGroup;
 			children = (
+				1927EF541D3902E8001A6970 /* LaunchScreen.storyboard */,
 				192D16171D2A4AF60066871F /* AppDelegate.swift */,
-				192D161B1D2A4AF60066871F /* Main.storyboard */,
+				192D161B1D2A4AF60066871F /* Login.storyboard */,
+				1927EF521D39023E001A6970 /* Main.storyboard */,
 				192D161E1D2A4AF60066871F /* Assets.xcassets */,
 				192D16231D2A4AF60066871F /* Info.plist */,
 				1952A0F61D338ED600429A8D /* Keychain */,
@@ -155,7 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				1952A0F11D3389AE00429A8D /* Constants.swift */,
-				1952A0F31D338BEF00429A8D /* Errors.swift */,
+				1952A0F31D338BEF00429A8D /* ErrorsMessages.swift */,
 				1952A0FE1D33902E00429A8D /* TempDefaults.swift */,
 			);
 			name = Constants;
@@ -220,8 +226,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1927EF531D39023E001A6970 /* Main.storyboard in Resources */,
 				192D161F1D2A4AF60066871F /* Assets.xcassets in Resources */,
-				192D161D1D2A4AF60066871F /* Main.storyboard in Resources */,
+				1927EF551D3902E8001A6970 /* LaunchScreen.storyboard in Resources */,
+				192D161D1D2A4AF60066871F /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +247,7 @@
 				192D16321D2C247D0066871F /* MainAppController.swift in Sources */,
 				1939B25B1D2E997300E8A11A /* KeychainSwiftDistrib.swift in Sources */,
 				192D16341D2C32160066871F /* CommonUtilities.swift in Sources */,
-				1952A0F41D338BEF00429A8D /* Errors.swift in Sources */,
+				1952A0F41D338BEF00429A8D /* ErrorsMessages.swift in Sources */,
 				192D16181D2A4AF60066871F /* AppDelegate.swift in Sources */,
 				1952A0F21D3389AE00429A8D /* Constants.swift in Sources */,
 				192D162C1D2AAA2C0066871F /* StringExtensions.swift in Sources */,
@@ -252,12 +260,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		192D161B1D2A4AF60066871F /* Main.storyboard */ = {
+		192D161B1D2A4AF60066871F /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				192D161C1D2A4AF60066871F /* Base */,
 			);
-			name = Main.storyboard;
+			name = Login.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -350,7 +358,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = AppX/Info.plist;
@@ -367,7 +374,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = AppX/Info.plist;
