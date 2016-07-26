@@ -43,7 +43,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         
         do{
-            
             try login(usernameFeild.text, password: passwordFeild.text)
             self.dismissViewControllerAnimated(true, completion: nil)
             setUserCredentialsToKeyChain(usernameFeild.text!, password: passwordFeild.text!)
@@ -60,33 +59,42 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        view.addSubview(cSpinner)
         if status == nil || status == LoginViewStatus.signingIn{
             displaySigningInScreen()
+            //sleep(1)
             do{
                 let user = try loginUsingStoredCredentials()
                 if user != nil{
                     self.dismissViewControllerAnimated(false, completion: nil)
                 }
+                else{
+                    status = LoginViewStatus.loginView
+                    displayLoginScreen()
+                }
             }catch UnauthorizedUser.invalidCredentials{
                 
                 let okAction = UIAlertAction(title: Constants.OK, style: .Cancel, handler: {(alert: UIAlertAction!) in self.status = LoginViewStatus.loginView})
                 showAlert(ErrorMessages.EXPIRED_CREDENTIALS_TITLE, message: ErrorMessages.EXPIRED_CREDENTIALS_MESSAGE, currentView: self, actions: okAction)
-                
+                status = LoginViewStatus.loginView
+                displayLoginScreen()
             } catch let error as NSError{
                 print("error: \(error)")
             }
+        }else{
+            displayLoginScreen()
         }
-        self.status = LoginViewStatus.signingIn
-        displayLoginScreen()
+        //self.status = LoginViewStatus.signingIn
+    
 
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
+    
     func displaySigningInScreen() {
+        self.view.addSubview(cSpinner)
         self.appXLabel.alpha = 0
         self.subtitleLabel.alpha = 0
         self.usernameFeild.alpha = 0
