@@ -31,8 +31,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             loginController.status = LoginViewStatus.signingIn
             
             UIView.animateWithDuration(1, animations: {launchScreen.alpha=0}, completion: { (Bool) -> Void  in launchScreen.removeFromSuperview();
+            
+                do{
+                    let user = try loginUsingStoredCredentials()
+                    if user != nil{
+                        loginController.dismissViewControllerAnimated(false, completion: nil)
+                    }
+                    else{
+                        loginController.status = LoginViewStatus.loginView
+                        loginController.displayLoginScreen()
+                    }
+                }catch UnauthorizedUser.invalidCredentials{
+                    
+                    let okAction = UIAlertAction(title: Constants.OK, style: .Cancel, handler: {(alert: UIAlertAction!) in loginController.status = LoginViewStatus.loginView})
+                    showAlert(ErrorMessages.EXPIRED_CREDENTIALS_TITLE, message: ErrorMessages.EXPIRED_CREDENTIALS_MESSAGE, currentView: loginController, actions: okAction)
+                    loginController.status = LoginViewStatus.loginView
+                } catch let error as NSError{
+                    print("error: \(error)")
+                }
+
                 
-                return
+            return
+                
             })
         })
         
