@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.addSubview(launchScreen)
         window?.bringSubviewToFront(launchScreen)
-        
+        sleep(1)
         let loginController = getView(storyboardName: "Login", storyboardIdentifier: "LoginView") as! LoginViewController
         
         window?.rootViewController?.presentViewController(loginController, animated: false, completion:{

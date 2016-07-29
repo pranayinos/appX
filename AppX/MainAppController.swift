@@ -18,7 +18,8 @@ class MainAppController: UIViewController {
         keyChain.delete(Constants.PASSWORD_KEY)
         let view = getView(storyboardName: Constants.LOGIN_STORYBOARD_NAME, storyboardIdentifier: Constants.LOGIN_VIEW_ID) as! LoginViewController
         self.presentViewController(view, animated: true, completion: {
-            view.status = LoginViewStatus.signingIn
+            view.status = LoginViewStatus.loginView
+            view.displayLoginScreen()
         })
     }
    
