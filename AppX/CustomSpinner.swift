@@ -45,6 +45,10 @@ class CustomSpinner: UIVisualEffectView {
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
         
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
         if let superview = self.superview {
             
             let width:CGFloat = 110.0
@@ -68,6 +72,8 @@ class CustomSpinner: UIVisualEffectView {
             label.textColor = UIColor.grayColor()
             label.font = UIFont.boldSystemFontOfSize(16)
         }
+
+        
     }
 
     func show() {
