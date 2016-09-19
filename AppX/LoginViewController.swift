@@ -57,6 +57,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if status == nil || status == LoginViewStatus.signingIn{
