@@ -39,7 +39,7 @@ func loginUsingStoredCredentials() throws -> User?{
     let userName = keyChain.get(Constants.USERNAME_KEY) ?? nil
     let password = keyChain.get(Constants.PASSWORD_KEY) ?? nil
     let userAuthenticator = BasicAuthenticator()
-    sleep(2)
+    sleep(0)
     
     guard let tempUsername = userName, let tempPassword = password else{
         return loggedInUser

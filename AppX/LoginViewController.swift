@@ -10,9 +10,9 @@ import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
+    let gradientLayer = CAGradientLayer()
     let keyChain = KeychainSwift()
     @IBOutlet var appXLabel: UILabel!
-    @IBOutlet var subtitleLabel: UILabel!
     @IBOutlet var usernameFeild: UITextField!
     @IBOutlet var passwordFeild: UITextField!
     @IBOutlet var loginButton: UIButton!
@@ -59,7 +59,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
+        
+        configureGradientBackground(UIColor(red: 0.83, green: 0.83, blue: 0.83, alpha: 1.0).CGColor, UIColor.whiteColor().CGColor)
+        
+     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -79,7 +82,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func displaySigningInScreen() {
         self.view.addSubview(cSpinner)
         self.appXLabel.alpha = 0
-        self.subtitleLabel.alpha = 0
         self.usernameFeild.alpha = 0
         self.passwordFeild.alpha = 0
         self.loginButton.alpha = 0
@@ -94,12 +96,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         UIView.animateWithDuration(0.5, animations: {
             self.cSpinner.alpha = 0
             self.appXLabel.alpha = 1
-            self.subtitleLabel.alpha = 1
             self.usernameFeild.alpha = 1
             self.passwordFeild.alpha = 1
             self.loginButton.alpha = 1
             self.footerLabel.alpha = 1
         })
         cSpinner.hide()
+    }
+    
+    func configureGradientBackground(colors:CGColorRef...){
+        
+        let gradient: CAGradientLayer = CAGradientLayer()
+        let maxWidth = max(self.view.bounds.size.height,self.view.bounds.size.width)
+        let squareFrame = CGRect(origin: self.view.bounds.origin, size: CGSizeMake(maxWidth, maxWidth))
+        gradient.frame = squareFrame
+        
+        gradient.colors = colors
+        view.layer.insertSublayer(gradient, atIndex: 0)
     }
 }
